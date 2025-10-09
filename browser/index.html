@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Mini Web Browser</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header class="toolbar">
+    <button id="back" aria-label="戻る">⟵</button>
+    <button id="forward" aria-label="進む">⟶</button>
+    <button id="reload" aria-label="再読み込み">⟳</button>
+    <input
+      id="url-input"
+      type="text"
+      placeholder="URL を入力 (例: https://example.com)"
+      autocomplete="off"
+      spellcheck="false"
+    />
+    <button id="go" aria-label="移動">移動</button>
+  </header>
+
+  <main class="browser">
+    <iframe id="viewer" title="Web ページ表示領域" sandbox="allow-scripts allow-forms allow-same-origin allow-popups allow-popups-to-escape-sandbox"></iframe>
+  </main>
+
+  <footer class="status-bar" role="status" aria-live="polite">
+    <span id="status-message">Mini Web Browser へようこそ</span>
+  </footer>
+
+  <template id="error-template">
+    <section class="error">
+      <h1>ページを読み込めませんでした</h1>
+      <p id="error-url"></p>
+      <p>入力した URL が正しいかご確認ください。</p>
+    </section>
+  </template>
+
+  <script src="app.js"></script>
+</body>
+</html>
