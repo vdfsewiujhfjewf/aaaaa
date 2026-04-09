@@ -27,6 +27,16 @@ python -m pip install -r requirements.txt
 > `python3` と `source` は PowerShell では使えません。  
 > PowerShell では `py -3` / `python` と `Activate.ps1` を使います。
 
+### Windows (ダブルクリック起動)
+
+`start.bat` を実行すると、以下を自動で行います。
+
+- `.venv` 作成（初回のみ）
+- 依存パッケージのインストール
+- `start_config.bat` を読み込んで `voice_changer.py` を起動
+
+設定は `start_config.bat` をメモ帳で開いて変更できます（いつでも変更可）。
+
 ## 2) デバイス確認
 
 ```bash
@@ -58,6 +68,15 @@ python voice_changer.py --input-device 1 --output-device 3
 - `--blocksize`: 小さいほど低遅延（ノイズや途切れが出る場合は上げる）
 - `--gain-db`: 出力音量を調整
 - `--no-gate`: ノイズゲートを無効化
+
+`start_config.bat` の主な項目:
+
+- `SEMITONES`（例: 4 / -4）
+- `BLOCKSIZE`（例: 512 / 1024）
+- `CHANNELS`（通常 1）
+- `GAIN_DB`（出力ゲイン）
+- `INPUT_DEVICE` / `OUTPUT_DEVICE`（空なら既定デバイス）
+- `EXTRA_ARGS`（例: `--no-gate`）
 
 ## 5) 仮想マイクとして使う
 
