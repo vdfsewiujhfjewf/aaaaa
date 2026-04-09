@@ -37,6 +37,8 @@ python -m pip install -r requirements.txt
 
 設定は `start_config.bat` をメモ帳で開いて変更できます（いつでも変更可）。
 
+男性→女性にしたい場合は、`start_config.bat` の `PRESET=male_to_female` にして `start.bat` を実行してください。
+
 ## 2) デバイス確認
 
 ```bash
@@ -60,23 +62,34 @@ python voice_changer.py --blocksize 512
 
 # 入出力デバイス指定（IDでも名前でも可）
 python voice_changer.py --input-device 1 --output-device 3
+
+# 男性→女性（プリセット）
+python voice_changer.py --preset male_to_female
+
+# 女性→男性（プリセット）
+python voice_changer.py --preset female_to_male
 ```
 
 ## 4) よく使う調整
 
 - `--semitones`: 声の高さを変更
+- `--preset`: `male_to_female` / `female_to_male` / `custom`
 - `--blocksize`: 小さいほど低遅延（ノイズや途切れが出る場合は上げる）
 - `--gain-db`: 出力音量を調整
 - `--no-gate`: ノイズゲートを無効化
 
 `start_config.bat` の主な項目:
 
+- `PRESET`（`male_to_female` / `female_to_male` / `custom`）
 - `SEMITONES`（例: 4 / -4）
+- `HIGHPASS_HZ`（例: 70 / 145）
 - `BLOCKSIZE`（例: 512 / 1024）
 - `CHANNELS`（通常 1）
 - `GAIN_DB`（出力ゲイン）
 - `INPUT_DEVICE` / `OUTPUT_DEVICE`（空なら既定デバイス）
 - `EXTRA_ARGS`（例: `--no-gate`）
+
+> `male_to_female` は「ピッチ上げ + 低域カット」による簡易変換です（AIの声質変換ではありません）。
 
 ## 5) 仮想マイクとして使う
 
