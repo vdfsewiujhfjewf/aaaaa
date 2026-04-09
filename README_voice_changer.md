@@ -4,6 +4,8 @@
 
 ## 1) セットアップ
 
+### macOS / Linux
+
 ```bash
 python3 -m venv .venv
 source .venv/bin/activate
@@ -13,11 +15,26 @@ pip install -r requirements.txt
 
 > Linux の場合は PortAudio が必要です（例: `sudo apt install portaudio19-dev`）。
 
+### Windows (PowerShell)
+
+```powershell
+py -3 -m venv .venv
+.venv\Scripts\Activate.ps1
+python -m pip install -U pip
+python -m pip install -r requirements.txt
+```
+
+> `python3` と `source` は PowerShell では使えません。  
+> PowerShell では `py -3` / `python` と `Activate.ps1` を使います。
+
 ## 2) デバイス確認
 
 ```bash
 python voice_changer.py --list-devices
 ```
+
+> Windows で実行場所が違うと `PathNotFound` になります。  
+> 先に `cd` でこの README があるフォルダ（`requirements.txt` がある場所）へ移動してください。
 
 ## 3) 実行例
 
