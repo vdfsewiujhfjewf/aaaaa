@@ -39,6 +39,20 @@ python -m pip install -r requirements.txt
 
 男性→女性にしたい場合は、`start_config.bat` の `PRESET=male_to_female` にして `start.bat` を実行してください。
 
+### Web 画面で設定して起動（新機能）
+
+`start_web.bat` を実行すると Web UI が起動します。  
+ブラウザで `http://127.0.0.1:5000` を開くと、以下を画面から変更できます。
+
+- preset
+- semitones
+- highpass
+- blocksize / channels / gain
+- input / output device
+- no gate
+
+保存後に **Start** ボタンで起動、**Stop** ボタンで停止します。
+
 ## 2) デバイス確認
 
 ```bash
@@ -96,3 +110,8 @@ python voice_changer.py --preset female_to_male
 このテンプレートは「マイク → スピーカー」までです。
 Discord / OBS で使いたい場合は、OSの仮想オーディオデバイス
 （BlackHole / VB-CABLE / PulseAudio null sink など）へ出力先を変更してください。
+
+## 6) Web UI スクリプト
+
+- `web_voice_control.py`: 設定保存 (`web_settings.json`) と Start/Stop を提供するローカルWebサーバ
+- `start_web.bat`: Windows用のWeb UI 起動スクリプト
