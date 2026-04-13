@@ -9,7 +9,7 @@ description: Design and implement JavaScript solutions for browser, Node.js, and
 Deliver robust JavaScript implementations that are clear, testable, and aligned with the target runtime.
 
 ## 起動（呼び出し）
-- チャットで `$<skill-name>` を明示して依頼する。
+- ターミナルでのアプリ起動は不要。チャットで `$<skill-name>` を明示して依頼する。
 - 例: `$javascript-code-specialist` + 実現したい内容。
 
 ## Workflow

@@ -9,7 +9,7 @@ description: Diagnose and fix broken or low-quality code across languages by rep
 Repair code quickly and safely with evidence-based debugging and minimal-risk changes.
 
 ## 起動（呼び出し）
-- チャットで `$<skill-name>` を明示して依頼する。
+- ターミナルでのアプリ起動は不要。チャットで `$<skill-name>` を明示して依頼する。
 - 例: `$code-repair-specialist` + 実現したい内容。
 
 ## Repair Workflow

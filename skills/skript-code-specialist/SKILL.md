@@ -9,7 +9,7 @@ description: Write, review, and refactor Minecraft Skript plugin code with addon
 Produce production-ready Skript code that is readable, version-aware, and safe for live Minecraft servers.
 
 ## 起動（呼び出し）
-- チャットで `$<skill-name>` を明示して依頼する。
+- ターミナルでのアプリ起動は不要。チャットで `$<skill-name>` を明示して依頼する。
 - 例: `$skript-code-specialist` + 実現したい内容。
 
 ## Workflow
