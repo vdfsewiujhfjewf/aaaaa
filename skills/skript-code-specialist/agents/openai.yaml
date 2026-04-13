@@ -1,0 +1,4 @@
+interface:
+  display_name: "Skript Code Specialist"
+  short_description: "Build and review Minecraft Skript code"
+  default_prompt: "Write reliable, addon-aware Skript code for Minecraft servers and explain compatibility constraints."
