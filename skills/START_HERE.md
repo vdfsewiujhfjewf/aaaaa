@@ -5,15 +5,29 @@
 
 ## まず結論（質問への回答）
 
-- **「ターミナルで起動すればいいの？」** → 基本は **No**。  
-  ターミナルでサーバー起動は不要で、チャットに `$skill-name` を書いて呼び出します。
-- **「ダウンロードできるようにして」** → **Yes**。  
-  このリポジトリには、skills一式をZIP化する `skills/package-skills.sh` を追加済みです。
+- **「ターミナルで起動すればいいの？」**  
+  スキル自体はターミナル起動不要です（チャットで呼び出し）。
+- **「別アプリで開きたい」**  
+  そのための **ダウンロード専用Web** を追加しました。必要なZIPをブラウザから落として別アプリに渡せます。
 
-## 使い方（最短）
+## ダウンロード専用Webの使い方
 
-1. Codex/Chat環境で、このリポジトリを開く
-2. 下のようにスキル名を含めて依頼する
+1. ターミナルで起動:
+
+```bash
+python3 skills/download-web/app.py
+```
+
+2. ブラウザで開く:
+
+- `http://127.0.0.1:8787`
+
+3. 欲しいZIPを選んでダウンロード:
+
+- 全部まとめて: `all.zip`
+- 個別: `skript-code-specialist.zip` / `javascript-code-specialist.zip` / `code-repair-specialist.zip`
+
+## チャットでの呼び出し（通常利用）
 
 - `$skript-code-specialist` で呼び出し
   - 例: 「`$skript-code-specialist` Paper 1.21用に、参加時に初期装備を配るskriptを書いて」
@@ -21,26 +35,6 @@
   - 例: 「`$javascript-code-specialist` Node.jsで再試行つきfetchラッパーを書いて」
 - `$code-repair-specialist` で呼び出し
   - 例: 「`$code-repair-specialist` このTypeErrorの原因を切り分けて最小修正して」
-
-## ダウンロード（ZIP作成）
-
-### 方法A: GitHubから丸ごとダウンロード
-- リポジトリ画面の **Code > Download ZIP** を使用。
-
-### 方法B: ターミナルでskillsだけZIP化
-
-```bash
-bash skills/package-skills.sh
-```
-
-作成物:
-- `dist/skills-bundle.zip`
-
-## 補足
-
-- `skript-code-specialist`: Minecraft Skript（`.sk`）の作成・改善向け
-- `javascript-code-specialist`: JavaScript/TypeScript実装向け
-- `code-repair-specialist`: バグ修正・原因調査向け
 
 ## 学習能力について
 
