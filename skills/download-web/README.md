@@ -14,6 +14,7 @@ python3 skills/download-web/app.py
 
 ## ダウンロードできる内容
 
+- `project-all.zip`（このプロジェクトの全ファイルを一括）
 - `all.zip`（3スキル + `START_HERE.md`）
 - `skript-code-specialist.zip`
 - `javascript-code-specialist.zip`

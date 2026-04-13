@@ -14,6 +14,7 @@ HOST = "127.0.0.1"
 PORT = 8787
 
 TARGETS = {
+    "project-all": [ROOT_DIR],
     "all": [
         SKILLS_DIR / "START_HERE.md",
         SKILLS_DIR / "skript-code-specialist",
@@ -28,12 +29,19 @@ TARGETS = {
 
 def iter_files(path: Path):
     if path.is_file():
+        if should_skip(path):
+            return
         yield path
         return
 
     for child in sorted(path.rglob("*")):
-        if child.is_file():
+        if child.is_file() and not should_skip(child):
             yield child
+
+
+def should_skip(path: Path) -> bool:
+    parts = set(path.parts)
+    return ".git" in parts or "__pycache__" in parts
 
 
 def build_zip(paths: list[Path]) -> bytes:
@@ -68,6 +76,7 @@ HTML = """<!doctype html>
     <h1>Skills Download Web</h1>
     <p>別アプリで開くために、必要なスキルを ZIP でダウンロードできます。</p>
     <div class=\"grid\">
+      <div class=\"card\"><span>このプロジェクトの全ファイル</span><a class=\"btn\" href=\"/download/project-all.zip\">一気にダウンロード</a></div>
       <div class=\"card\"><span>3スキル一式 + ガイド</span><a class=\"btn\" href=\"/download/all.zip\">ダウンロード</a></div>
       <div class=\"card\"><span>skript-code-specialist</span><a class=\"btn\" href=\"/download/skript-code-specialist.zip\">ダウンロード</a></div>
       <div class=\"card\"><span>javascript-code-specialist</span><a class=\"btn\" href=\"/download/javascript-code-specialist.zip\">ダウンロード</a></div>

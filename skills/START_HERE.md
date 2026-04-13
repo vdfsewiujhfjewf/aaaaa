@@ -24,6 +24,7 @@ python3 skills/download-web/app.py
 
 3. 欲しいZIPを選んでダウンロード:
 
+- **全ファイル一括**: `project-all.zip`
 - 全部まとめて: `all.zip`
 - 個別: `skript-code-specialist.zip` / `javascript-code-specialist.zip` / `code-repair-specialist.zip`
 
